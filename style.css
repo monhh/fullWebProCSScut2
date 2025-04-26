@@ -1,0 +1,125 @@
+
+@layer reset {
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    /* Prevent font size inflation */
+    html {
+        -moz-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+    }
+
+    /* Remove default margin */
+    body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+        /* margin-block-end: 0; */ /* Andy Bell */
+        margin: 0; /* Kevin Powell */
+    }
+
+    /* Remove list styles on ul, ol elements
+         Safari removes list semantics of lists that don’t look like lists (list-style: none). 
+         Scott O’Hara provided a fix in “Fixing” Lists, where he suggests setting role="list" explicitly on the list to re-add list semantics
+    */
+
+    /* Andy Bell: Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+    /* 
+    ul[role='list'],
+    ol[role='list'] {
+        list-style: none;
+    } 
+    */
+
+    /* Kevin Powell. https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html */
+    [role="list"] {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Set core body defaults */
+    body {
+        /* min-height: 100vh;*/ /* Andy Bell */
+        min-block-size: 100vh; /* Kevin Powell */
+        line-height: 1.5; /* both  */
+    }
+
+    /* Andy Bell: Set shorter line heights on headings and interactive elements */
+    /* 
+    h1, h2, h3, h4, button, input, label {
+        line-height: 1.1;
+    } 
+    */
+
+    /* Kevin Powell */
+    h1, h2, h3, button, input, label {
+        line-height: 1.1;
+    } 
+
+    /* Balance text wrapping on headings */
+    h1, h2, h3, h4 {
+        text-wrap: balance;
+    }
+    
+    /* Kevin Powell */
+    p, li {
+        text-wrap: pretty;
+    }
+
+    /* Andy Bell: A elements that don't have a class get default styles */
+    /* 
+    a:not([class]) {
+        text-decoration-skip-ink: auto;
+        color: currentColor;
+        }
+     */
+
+
+    /* Andy Bell: Make images easier to work with */
+    /* 
+    img, picture {
+        max-width: 100%;
+        display: block;
+    } 
+    */
+
+    /* Kevin Powell */
+    img, picture {
+        max-inline-size: 100%;
+        display: block;
+    }
+
+    /* Andy Bell: Inherit fonts for inputs and buttons */
+    /* 
+    input, button, textarea, select {
+        font-family: inherit;
+        font-size: inherit;
+    } 
+    */
+
+    /* Kevin Powell */
+    input, button, textarea, select {
+        font: inherit;
+    }
+
+    /* Andy Bell: Make sure textareas without a rows attribute are not tiny */
+    /* 
+    textarea:not([rows]) {
+        min-height: 10em;
+    } 
+    */
+
+    /* Andy Bell: Anything that has been anchored to should have extra scroll margin */
+    /* For example, if a user clicks a "Skip to main content" link, the browser will scroll to the #main element. 
+        The scroll-margin-block ensures that the #main element does not appear too close to the top of the viewport */
+    /* 
+    :target {
+        scroll-margin-block: 5ex;
+    }
+    */
+
+}
+
+
+
+
