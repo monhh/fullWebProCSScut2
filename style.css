@@ -241,4 +241,17 @@
          /* max-width: calc(1130px + 2rem); */
          box-sizing: content-box;
      }
+
+     .section {
+         --padding: 3.75rem;
+         padding-block: var(--padding);
+ 
+         @media (width > 760px){
+             --padding: 8rem;
+ 
+             &[data-padding="compact"] {
+                 --padding: 4.5rem;
+             }
+         }
+     }
  }
