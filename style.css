@@ -229,6 +229,9 @@
          color: var(--text-brand-light);
      }
 
+     img {
+        border-radius: var(--border-radius-3);
+    }
 }
 
 @layer utilities {
