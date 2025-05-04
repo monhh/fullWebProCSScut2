@@ -234,6 +234,61 @@
     }
 }
 
+@layer layout {
+
+    /* space */
+     .flow > * + * {
+         margin-block-start: var(--flow-spacer, 1em);
+     }
+     .grid-flow {
+         display: grid;
+         gap: var(--grid-flow-gap, 1rem);
+     }
+
+    .equal-columns {
+         display: grid;
+         gap: var(--equal-columns-gap, 1rem);
+         align-items: var(--equal-columns-vertical-alignment, stretch);
+ 
+         @media (width > 760px) {
+             grid-auto-flow: column;
+             grid-auto-columns: 1fr;
+         }
+ 
+         /* with modifiers and custom properties */
+         &[data-gap="large"] {
+             --equal-columns-gap: 2rem;
+         }
+         &[data-alignment="centered"] {
+             --equal-columns-vertical-alignment: center;
+         }
+ 
+     }
+
+     .wrapper {
+         max-width: 1130px;
+         margin-inline: auto;
+         padding-inline: 1rem;
+         
+         /* /* for Figma design */ 
+         /* max-width: calc(1130px + 2rem); */
+         box-sizing: content-box;
+     }
+
+     .section {
+         --padding: 3.75rem;
+         padding-block: var(--padding);
+ 
+         @media (width > 760px){
+             --padding: 8rem;
+ 
+             &[data-padding="compact"] {
+                 --padding: 4.5rem;
+             }
+         }
+     }
+ }
+
 @layer components {
 
     .site-header {
@@ -339,61 +394,6 @@
     }
     
 }
-
-@layer layout {
-
-    /* space */
-     .flow > * + * {
-         margin-block-start: var(--flow-spacer, 1em);
-     }
-     .grid-flow {
-         display: grid;
-         gap: var(--grid-flow-gap, 1rem);
-     }
-
-    .equal-columns {
-         display: grid;
-         gap: var(--equal-columns-gap, 1rem);
-         align-items: var(--equal-columns-vertical-alignment, stretch);
- 
-         @media (width > 760px) {
-             grid-auto-flow: column;
-             grid-auto-columns: 1fr;
-         }
- 
-         /* with modifiers and custom properties */
-         &[data-gap="large"] {
-             --equal-columns-gap: 2rem;
-         }
-         &[data-alignment="centered"] {
-             --equal-columns-vertical-alignment: center;
-         }
- 
-     }
-
-     .wrapper {
-         max-width: 1130px;
-         margin-inline: auto;
-         padding-inline: 1rem;
-         
-         /* /* for Figma design */ 
-         /* max-width: calc(1130px + 2rem); */
-         box-sizing: content-box;
-     }
-
-     .section {
-         --padding: 3.75rem;
-         padding-block: var(--padding);
- 
-         @media (width > 760px){
-             --padding: 8rem;
- 
-             &[data-padding="compact"] {
-                 --padding: 4.5rem;
-             }
-         }
-     }
- }
 
  @layer utilities {
     

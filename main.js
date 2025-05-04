@@ -11,6 +11,6 @@ navToggle.addEventListener("click", () => {
         navToggle.setAttribute("aria-expanded", "false");
     }
 
-    console.log(navOpened);
+    /* console.log(navOpened); */
 })
 
