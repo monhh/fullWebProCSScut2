@@ -256,6 +256,31 @@
      }
 
      a {text-decoration: none;}
+
+     .card {
+        /* first they were grids and now flex*/
+
+        /* display: grid;
+        gap: var(--card-gap, 1rem); */
+
+        display: flex;
+        flex-direction: column;
+        gap: var(--card-gap, 1rem);
+        
+        padding: 1rem;
+        background-color: var(--background-light);
+        border-radius: var(--border-radius-3);
+
+        img {
+            border-radius: var(--border-radius-2);
+        }
+    }
+
+    .card__title {
+        font-size: var(--card-title-font-size, var(--font-size-heading-sm));
+        color: var(--card-title-color, var(--text-brand));
+    }
+    
 }
 
 @layer layout {
