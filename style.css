@@ -256,6 +256,10 @@
 
         img { border-radius: 0 }
     }
+    /* hide hamburger */
+    [aria-controls="primary-nav"] {
+         display: none; 
+     }
 
     .primary-navigation {
          ul {
@@ -267,6 +271,9 @@
          a {text-decoration: none;}
 
          @media (width < 760px) {
+
+            display: none; /* hide mobile navigation */
+
             position: absolute;
             z-index: 10;
             top: 0;
@@ -293,6 +300,18 @@
                 border-top: 2px solid var(--background-accent-light);
             }
         }
+     }
+
+      /* show mobile navigation */
+     @media (width < 760px) {
+         /* show hamburger */
+         [aria-controls="primary-nav"] {
+             display: block;
+         }
+         /* interactive show mobile navigation */
+         [aria-expanded="true"] ~ .primary-navigation {
+             display: block;
+         }
      }
 
      .card {
