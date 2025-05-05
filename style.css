@@ -236,6 +236,12 @@
 
 @layer layout {
 
+    .flex-group {
+         display: flex;
+         flex-wrap: wrap;
+         gap: var(--flex-group-gap, 0.5rem);
+     }
+
     /* space */
      .flow > * + * {
          margin-block-start: var(--flow-spacer, 1em);
@@ -451,6 +457,22 @@
              --tag-bg: var(--clr-orange-500);
          }
      }
+
+    select,
+    ::picker(select) {
+        appearance: base-select;
+
+        border-radius: var(--border-radius-2);
+    }
+
+    select {
+        font-family: var(--ff-heading);
+        background-color: var(--background-accent-main);
+        color: var(--text-high-contrast);
+        padding: 0.5rem 0.5rem 0.5rem 1rem;
+        border: 0;
+        border-radius: var(--border-radius-2);
+    }
     
 }
 
