@@ -282,14 +282,14 @@
      }
 
      .section {
-         --padding: 3.75rem;
+         --padding: 0.25rem;
          padding-block: var(--padding);
  
          @media (width > 760px){
-             --padding: 8rem;
+             --padding: 1rem;
  
              &[data-padding="compact"] {
-                 --padding: 4.5rem;
+                 --padding: 0.5rem;
              }
          }
      }
@@ -315,6 +315,7 @@
     .site-header__inner {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         flex-wrap: wrap;
         gap: 0.5rem 2rem;
     }
